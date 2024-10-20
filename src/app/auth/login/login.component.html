@@ -1,1 +1,43 @@
-<p>login works!</p>
+<!-- Main container -->
+<div class="bg-image">
+  <!-- Flex container for centering items -->
+  <div class="flex h-screen flex-col items-center justify-center">
+      
+  <div class="bg-[#F2E5DA] rounded-full inline-block no-underline w-20 h-20 flex items-center justify-center mb-10 p-2">
+    <svg
+    width="51"
+    height="58"
+    viewBox="0 0 21 28"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M5.58484 25.1559C5.65126 22.2053 6.24214 20.0155 6.72865 18.6222C7.41873 16.6609 8.98177 14.6962 10.9761 10.1944C11.8059 8.32305 12.3675 6.29027 12.716 4.30024C13.0084 2.63651 12.4037 2.33377 10.7622 2.83542C9.78485 3.13467 6.5708 4.6466 4.42636 8.75927C2.28193 12.8719 2.60799 16.9602 2.89179 18.8516C2.97115 19.3803 3.22821 20.5093 3.42747 22.2245C3.55427 23.329 3.57929 23.9397 3.75008 25.5519C3.86049 26.5989 3.96746 27.4547 4.03819 27.9948C2.88317 26.5535 1.02339 23.8254 0.280691 19.9788C0.166827 19.3925 -1.60237 9.36998 5.40369 3.48975C8.71695 0.708419 12.4684 0.131738 14.4421 0C14.986 1.17538 15.2779 2.45388 15.2986 3.75148C15.311 4.6693 15.1862 5.58375 14.9286 6.46389C14.2445 9.50433 12.6263 12.2385 11.0374 14.9928C9.55195 17.57 8.20715 20.2048 8.20025 23.2121C8.20025 24.4038 8.67123 24.7441 9.8116 24.4701C12.0259 23.9379 13.7934 22.6075 15.1097 20.7544C18.0917 16.5571 18.4152 11.9725 18.448 11.0817C18.49 9.81188 18.396 8.54119 18.1676 7.29183C17.9832 6.31293 17.7118 5.35285 17.3568 4.42326C17.0693 3.04946 16.7817 1.67537 16.4942 0.300991C17.6889 1.55992 20.5191 4.90397 20.9461 9.83586C21.1928 12.6922 20.5338 14.9134 20.1646 16.1174C19.7565 17.4444 18.5756 21.12 15.0985 24.1526C13.4157 25.6245 11.4471 26.7241 9.31905 27.3806C8.13599 27.7348 6.91484 27.9428 5.68231 28C5.65011 27.0496 5.61762 26.1016 5.58484 25.1559Z"
+      fill="#9E624C"
+    />
+  </svg>
+</div>
+      <!-- Container for login form -->
+      <div class="max-h-auto mx-auto max-w-xl text-center"> <!-- Added text-center here -->
+          <!-- Login title and description -->
+          <div class="mb-8 space-y-3">
+              <h1 class="text-xl font-semibold">ورود / ثبت نام</h1>
+              <p class="text-gray-500">برای ورود یا ثبت نام شماره تماس خود را وارد کنید!</p>
+          </div>
+          <!-- Login form -->
+          <form class="w-full">
+              <div class="mb-10 space-y-3">
+                  <div class="space-y-1">
+                      <div class="space-y-2">
+                          <!-- Email label and input field -->
+                          <label class="text-sm font-medium leading-none" for="email">شماره تلفن</label>
+                          <input class="border bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm focus-visible:outline-none" id="email" placeholder="۰۹۰۲۳۹۳٦۳۰۳" name="email" />
+                      </div>
+                  </div>
+                  <!-- Login button -->
+                  <button class="ring-offset-background focus-visible:ring-ring flex h-10 w-full items-center justify-center whitespace-nowrap rounded-md bg-[#9E624C] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#9E624C] focus-visible:outline-none" type="submit">ورود / ثبت نام</button>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>

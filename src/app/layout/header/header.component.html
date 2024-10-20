@@ -1,0 +1,200 @@
+<body
+  style="font-family: persian , sans-serif !important;"
+  class="text-base leading-normal tracking-normal text-gray-600 bg-white work-sans"
+>
+  <!--TopBar-->
+  <nav id="header" class="top-0 z-30 w-full py-1">
+    <div
+      class="container flex flex-wrap items-center justify-between w-full px-6 py-3 mx-auto mt-0"
+    >
+      <label for="menu-toggle" class="block cursor-pointer md:hidden">
+        <svg
+          class="text-gray-900 fill-current"
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+        >
+          <title>menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+        </svg>
+      </label>
+      <input class="hidden" type="checkbox" id="menu-toggle" />
+      
+      <div
+        class="order-3 hidden w-full md:flex md:items-center md:w-auto md:order-1"
+        id="menu"
+      >
+        <nav>
+            <!-- the new navbar links for menu -->
+            <ul class="items-center justify-between pt-4 text-base text-gray-700 md:pt-0 md:hidden">
+                <li class="mx-1 px-1 py-2">
+                  <a href="#" class="font-medium no-underline hover:underline hover:text-black inline-block px-4 py-2">تماس با ما</a>
+                </li>
+                <li class="mx-1 px-1 py-2">
+                  <a href="#" class="font-medium no-underline hover:underline hover:text-black inline-block px-4 py-2">درباره ما</a>
+                </li>
+                <li class="mx-1 px-1 py-2">
+                  <a href="#" class="font-medium no-underline hover:underline hover:text-black inline-block px-4 py-2">خدمات</a>
+                </li>
+              
+                <!-- Dropdown for لیست محصولات -->
+                <li class="relative mx-1 px-1 py-2 bg-white group">
+                  <a class="font-medium no-underline hover:underline hover:text-black inline-block px-4 py-2">
+                    لیست محصولات
+                    <i class="bi bi-caret-down-fill"></i>
+                  </a>
+                  <!-- Dropdown Menu -->
+                  <ul class="absolute !bg-white border-2 left-0 mt-1 p-2 w-full rounded-lg shadow-lg bg-white hidden group-hover:block z-10">
+                    <li class="whitespace-no-wrap text-sm text-gray-600 hover:text-gray-800 hover:bg-gray-100">
+                      <a href="#" class="px-4 py-2 block">1</a>
+                    </li>
+                    <li class="whitespace-no-wrap text-sm text-gray-600 hover:text-gray-800 hover:bg-gray-100">
+                      <a href="#" class="px-4 py-2 block">2</a>
+                    </li>
+                    <li class="whitespace-no-wrap text-sm text-gray-600 hover:text-gray-800 hover:bg-gray-100">
+                      <a href="#" class="px-4 py-2 block">3</a>
+                    </li>
+                  </ul>
+                </li>
+              
+                <li class="relative mx-1 px-1 py-2">
+                  <a href="#" class="font-medium no-underline hover:underline hover:text-black inline-block px-4 py-2">
+                    صفحه اصلی
+                    <span class="inline-block w-3 h-3 bg-white rounded-full ml-1"></span> <!-- Circle Dot -->
+                  </a>
+                </li>
+              </ul>
+              
+              <!-- end of links -->
+            
+              <!-- elements of topbar -->
+          <ul
+            class="items-center justify-between pt-4 text-base text-gray-700 md:flex md:pt-0"
+          >
+            <li>
+              <a
+                style="font-family: persian  !important;"
+                class="inline-block px-4 py-2 no-underline hover:text-black hover:underline"
+                href="#"
+                >0902-3936303</a
+              >
+              <!-- <a class="inline-block px-4 py-2 no-underline hover:text-black hover:underline" href="#">3936303</a> -->
+            </li>
+            <li class="bg-[#F2E5DA] hidden sm:flex md:flex rounded-full inline-block no-underline w-12 h-12 flex items-center justify-center p-2">
+              <svg
+                width="21"
+                height="28"
+                viewBox="0 0 21 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.58484 25.1559C5.65126 22.2053 6.24214 20.0155 6.72865 18.6222C7.41873 16.6609 8.98177 14.6962 10.9761 10.1944C11.8059 8.32305 12.3675 6.29027 12.716 4.30024C13.0084 2.63651 12.4037 2.33377 10.7622 2.83542C9.78485 3.13467 6.5708 4.6466 4.42636 8.75927C2.28193 12.8719 2.60799 16.9602 2.89179 18.8516C2.97115 19.3803 3.22821 20.5093 3.42747 22.2245C3.55427 23.329 3.57929 23.9397 3.75008 25.5519C3.86049 26.5989 3.96746 27.4547 4.03819 27.9948C2.88317 26.5535 1.02339 23.8254 0.280691 19.9788C0.166827 19.3925 -1.60237 9.36998 5.40369 3.48975C8.71695 0.708419 12.4684 0.131738 14.4421 0C14.986 1.17538 15.2779 2.45388 15.2986 3.75148C15.311 4.6693 15.1862 5.58375 14.9286 6.46389C14.2445 9.50433 12.6263 12.2385 11.0374 14.9928C9.55195 17.57 8.20715 20.2048 8.20025 23.2121C8.20025 24.4038 8.67123 24.7441 9.8116 24.4701C12.0259 23.9379 13.7934 22.6075 15.1097 20.7544C18.0917 16.5571 18.4152 11.9725 18.448 11.0817C18.49 9.81188 18.396 8.54119 18.1676 7.29183C17.9832 6.31293 17.7118 5.35285 17.3568 4.42326C17.0693 3.04946 16.7817 1.67537 16.4942 0.300991C17.6889 1.55992 20.5191 4.90397 20.9461 9.83586C21.1928 12.6922 20.5338 14.9134 20.1646 16.1174C19.7565 17.4444 18.5756 21.12 15.0985 24.1526C13.4157 25.6245 11.4471 26.7241 9.31905 27.3806C8.13599 27.7348 6.91484 27.9428 5.68231 28C5.65011 27.0496 5.61762 26.1016 5.58484 25.1559Z"
+                  fill="#9E624C"
+                />
+              </svg>
+            </li>
+          </ul>
+          <!-- end of elements of topbar -->
+        </nav>
+        
+      </div>
+
+      
+      <div class="order-1 md:order-2">
+        <a
+          class="flex items-center text-xl font-bold tracking-wide text-gray-800 no-underline hover:no-underline"
+          href="#"
+        >
+          <img src="/images/Logo.png" alt="logo" class="w-auto h-16" />
+        </a>
+      </div>
+
+      
+      <div class="flex items-center order-2 md:order-3" id="nav-content">
+        <div
+          class="flex mx-3 overflow-hidden rounded-full"
+          style="border: 2px solid #9e624c"
+        >
+          <button
+            class="px-4 py-2 text-gray-800 bg-transparent rounded-l-full hover:bg-gray-100 focus:outline-none"
+          >
+            ورود
+          </button>
+          <button
+            class="px-4 py-2 text-gray-800 bg-transparent rounded-r-full hover:bg-gray-100 focus:outline-none"
+          >
+            ثبت نام
+          </button>
+        </div>
+
+        <a
+          class="bg-[#9E624C] text-white p-3 rounded-full inline-block no-underline hover:text-black w-12 h-12 flex items-center justify-center"
+          href="#"
+        >
+          <i class="bi bi-basket"></i>
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- navbar -->
+   
+  <div class="flex items-center justify-center hidden md:flex">
+    <!-- Navbar Container -->
+    <nav class="bg-[#28221E] rounded-full px-6 py-3 shadow-md md:w-[50vw]">
+      <!-- Navbar Links -->
+      <ul class="flex justify-center space-x-10">
+        <li class="mx-1 px-1 py-2">
+          <a href="#" class="font-medium text-white no-underline hover:bg-gray">تماس با ما</a>
+        </li>
+        <li class="mx-1 px-1 py-2">
+          <a href="#" class="font-medium text-white no-underline hover:bg-gray">درباره ما</a>
+        </li>
+        <li class="mx-1 px-1 py-2">
+          <a href="#" class="font-medium text-white no-underline hover:bg-gray">خدمات</a>
+        </li>
+
+        <li class="items-center justify-center relative mx-1 px-1 py-2 group hover:bg-gray rounded-full md:mb-0" id="button_admin">
+            <a class="font-medium text-white no-underline hover:bg-gray">
+                <span class="firstlevel mx-2">لیست محصولات</span>
+                <i class="bi bi-caret-down-fill"></i>
+            </a>
+            <ul class="absolute left-0 top-0 mt-10 p-2 w-[10vw] border-2 !bg-white rounded-lg shadow-lg bg-white z-10 hidden group-hover:block">
+                <svg class="block fill-current text-white w-4 h-4 absolute left-0 top-0 ml-3 -mt-3 z-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>
+                <li class="p-1 whitespace-no-wrap rounded-full text-sm md:text-base text-gray-600 hover:text-gray-800 hover:bg-gray-100">
+                    <a class="px-2 py-1" href="http://www.italiansubs.local:8081/forum/index.php?action=admin;area=featuresettings">
+                        <span class="">1</span>
+                    </a>
+                </li>
+                <li class="p-1 whitespace-no-wrap rounded-full text-sm md:text-base text-gray-600 hover:text-gray-800 hover:bg-gray-100">
+                    <a class="px-2 py-1" href="http://www.italiansubs.local:8081/forum/index.php?action=admin;area=packages">
+                        <span class="">2 </span>
+                    </a>
+                </li>
+                <li class="p-1 whitespace-no-wrap rounded-full text-sm md:text-base text-gray-600 hover:text-gray-800 hover:bg-gray-100">
+                    <a class="px-2 py-1" href="http://www.italiansubs.local:8081/forum/index.php?action=admin;area=permissions">
+                        <span class="">3</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        
+        <li class="relative mx-1 px-1 py-2">
+          <a href="#" class="font-medium text-white no-underline hover:bg-gray">
+            <!-- Circle Dot -->
+            صفحه اصلی
+            <span class="inline-block w-3 h-3 bg-white rounded-full mr-1"></span> 
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  
+
+
+
+
+
