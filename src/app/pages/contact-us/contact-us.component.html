@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <body class="">
+
+    <app-header></app-header>
+
+    <div
+      class="flex flex-col md:flex-row justify-center md:space-x-6 mt-10 sm:mx-10 mb-20"
+    >
+      <form class="max-w-lg flex flex-col border px-10 rounded-lg justify-center my-10 w-full md:w-2/3">
+        <div dir="rtl" class="text-xl font-semibold">فرم ارتباط با ما</div>
+        <!-- Credentials -->
+        <div class="grid md:grid-cols-2 md:gap-6">
+          <div class="relative z-0 w-full my-6 group">
+            <input
+              type="text"
+              name="floating_first_name"
+              id="floating_first_name"
+              class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#9E624C] peer"
+              placeholder=" "
+              required
+            />
+            <label
+              for="floating_first_name"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#9E624C] peer-focus:dark:text-[#9E624C] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >نام</label
+            >
+          </div>
+          <div class="relative z-0 w-full my-6 group">
+            <input
+              type="text"
+              name="floating_last_name"
+              id="floating_last_name"
+              class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#9E624C] peer"
+              placeholder=" "
+              required
+            />
+            <label
+              for="floating_last_name"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#9E624C] peer-focus:dark:text-[#9E624C] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >نام خانوادگی</label
+            >
+          </div>
+        </div>
+
+        <!-- email -->
+        <div class="relative z-0 w-full my-6 group">
+          <input
+            type="email"
+            name="email"
+            id="floating_email"
+            class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#9E624C] peer"
+            placeholder=" "
+            required
+          />
+          <label
+            for="floating_email"
+            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#9E624C] peer-focus:dark:text-[#9E624C] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >ایمیل</label
+          >
+        </div>
+
+        <!-- Comments -->
+        <div class="relative z-0 w-full my-6 group">
+          <textarea
+            name="comments"
+            id="floating_comments"
+            class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#9E624C] peer"
+            placeholder=""
+            required
+          ></textarea>
+          <label
+            for="floating_comments"
+            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#9E624C] peer-focus:dark:text-[#9E624C] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >توضیحات</label
+          >
+        </div>
+
+        <div class="block">
+          <button class="w-full p-3 shadow-lg text-white mt-5 rounded-lg bg-[#9E624C]"> 
+            ارسال پیام
+          </button>
+        </div>
+      </form>
+
+      <div class="w-full md:w-1/3 bg-[#FFF8F5] rounded-lg shadow-lg p-6 mt-10 mx-auto flex flex-col items-center justify-center"> 
+        <h2 class="text-xl font-semibold text-center mb-6">سوالات متداول</h2>
+      
+        <!-- Purchase Items List -->
+        <div class="w-full flex flex-col items-center">
+      
+          <!-- Accordion Container -->
+          <div class="flex flex-col justify-center items-center w-full">
+            <!-- Centered Accordion with wider width -->
+            <div class="w-full md:w-full mx-auto p-8"> <!-- Changed width to full -->
+              <!-- Accordion Item 1 -->
+              <div class="shadow-md bg-[#f8fafc]">
+                <div class="tab w-full overflow-hidden border-t">
+                  <input
+                    class="absolute opacity-0"
+                    id="tab-multi-one"
+                    type="checkbox"
+                    name="tabs"
+                  />
+                  <label
+                    class="block p-5 leading-normal cursor-pointer"
+                    for="tab-multi-one"
+                    >پرسش شما</label
+                  >
+                  <div
+                    class="tab-content overflow-hidden border-l-2 bg-gray-100 border-[#9E624C]-500 leading-normal"
+                  >
+                    <p class="p-5">پاسخ پرسش شما</p>
+                  </div>
+                </div>
+              </div>
+      
+              <!-- Accordion Item 2 -->
+              <div class="shadow-md bg-[#f8fafc] mt-4"> <!-- Added margin-top for spacing -->
+                <div class="tab w-full overflow-hidden border-t">
+                  <input
+                    class="absolute opacity-0"
+                    id="tab-multi-two"
+                    type="checkbox"
+                    name="tabs"
+                  />
+                  <label
+                    class="block p-5 leading-normal cursor-pointer"
+                    for="tab-multi-two"
+                    >پرسش شما</label
+                  >
+                  <div
+                    class="tab-content overflow-hidden border-l-2 bg-gray-100 border-[#9E624C]-500 leading-normal"
+                  >
+                    <p class="p-5">پاسخ پرسش شما</p>
+                  </div>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+      
+        </div>
+      
+        <!-- Payment Info -->
+        <div class="mt-6 space-y-5 text-sm text-gray-500" dir="rtl">
+          <p>
+            <i class="text-[#9e624c] bi bi-telephone-fill"></i>
+            ۰۹۰۲-۳۹۳٦۳۰۳
+          </p>
+          <p>
+            <i class="text-[#9e624c] bi bi-crosshair"></i>
+            همدان، کوی شمس، انتهای صداقت چهار، پلاک ٥ ،طبقه ۲
+          </p>
+          <p>
+            <i class="text-[#9e624c] bi bi-envelope-at"></i>
+            mojtabahaqigmail.com
+          </p>
+        </div>
+      
+        <!-- Social Buttons -->
+        <div class="mt-5 space-x-5 space-y-3  items-center justify-center">
+          <button class="text-[#9e624c] bi bi-telegram"></button>
+          <button class="text-[#9e624c] bi bi-instagram"></button>
+          <button class="text-[#9e624c] bi bi-whatsapp"></button>
+        </div>
+      
+      </div>
+      
+      
+      
+      
+
+    </div>
+
+
+    <app-footer></app-footer>
+  </body>
+  <script>
+    /* Optional Javascript to close the radio button version by clicking it again */
+    var myRadios = document.getElementsByName("tabs2");
+    var setCheck;
+    var x = 0;
+    for (x = 0; x < myRadios.length; x++) {
+      myRadios[x].onclick = function () {
+        if (setCheck != this) {
+          setCheck = this;
+        } else {
+          this.checked = false;
+          setCheck = null;
+        }
+      };
+    }
+  </script>
+</html>
