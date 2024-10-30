@@ -13,12 +13,13 @@ import { VerificationCodeComponent } from "./auth/verification-code/verification
 import { PaymentComponent } from "./pages/payment/payment.component";
 import { ContactUsComponent } from "./pages/contact-us/contact-us.component";
 import { ShoppingCartComponent } from "./pages/shopping-cart/shopping-cart.component";
+import { ChatBotComponent } from "./pages/chat-bot/chat-bot.component";
 
   
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, HeroPartComponent, BestSellesComponent, CategoryComponent, BlogComponent, LandingPageComponent, ProductPageComponent, LoginComponent, VerificationCodeComponent, PaymentComponent, ContactUsComponent, ShoppingCartComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, HeroPartComponent, BestSellesComponent, CategoryComponent, BlogComponent, LandingPageComponent, ProductPageComponent, LoginComponent, VerificationCodeComponent, PaymentComponent, ContactUsComponent, ShoppingCartComponent, ChatBotComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

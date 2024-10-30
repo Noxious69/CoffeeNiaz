@@ -5,11 +5,12 @@ import { CategoryComponent } from "./category/category.component";
 import { BestSellesComponent } from "./best-selles/best-selles.component";
 import { BlogComponent } from "./blog/blog.component";
 import { FooterComponent } from "../../layout/footer/footer.component";
+import { ModalComponent } from "../../layout/modal/modal.component";
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [HeaderComponent, HeroPartComponent, CategoryComponent, BestSellesComponent, BlogComponent, FooterComponent],
+  imports: [HeaderComponent, HeroPartComponent, CategoryComponent, BestSellesComponent, BlogComponent, FooterComponent, ModalComponent],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'
 })
