@@ -5,7 +5,7 @@ import { FooterComponent } from "./layout/footer/footer.component";
 import { HeroPartComponent } from "./pages/~Landing/hero-part/hero-part.component";
 import { BestSellesComponent } from "./pages/~Landing/best-selles/best-selles.component";
 import { CategoryComponent } from "./pages/~Landing/category/category.component";
-import { BlogComponent } from "./pages/~Landing/blog/blog.component";
+import { LandingBlogComponent } from "./pages/~Landing/landing-blog/landing-blog.component";
 import { LandingPageComponent } from "./pages/~Landing/landing-page.component";
 import { ProductPageComponent } from "./pages/product-page/product-page.component";
 import { LoginComponent } from "./auth/login/login.component";
@@ -15,16 +15,16 @@ import { ContactUsComponent } from "./pages/contact-us/contact-us.component";
 import { ShoppingCartComponent } from "./pages/shopping-cart/shopping-cart.component";
 import { ChatBotComponent } from "./pages/chat-bot/chat-bot.component";
 
-  
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, HeroPartComponent, BestSellesComponent, CategoryComponent, BlogComponent, LandingPageComponent, ProductPageComponent, LoginComponent, VerificationCodeComponent, PaymentComponent, ContactUsComponent, ShoppingCartComponent, ChatBotComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, HeroPartComponent, BestSellesComponent, CategoryComponent, LandingBlogComponent, LandingPageComponent, ProductPageComponent, LoginComponent, VerificationCodeComponent, PaymentComponent, ContactUsComponent, ShoppingCartComponent, ChatBotComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'caffeeNiaz';
 
-  
+
 }

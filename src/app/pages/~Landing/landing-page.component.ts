@@ -3,14 +3,15 @@ import { HeaderComponent } from "../../layout/header/header.component";
 import { HeroPartComponent } from "./hero-part/hero-part.component";
 import { CategoryComponent } from "./category/category.component";
 import { BestSellesComponent } from "./best-selles/best-selles.component";
-import { BlogComponent } from "./blog/blog.component";
+import { LandingBlogComponent } from "./landing-blog/landing-blog.component";
 import { FooterComponent } from "../../layout/footer/footer.component";
 import { ModalComponent } from "../../layout/modal/modal.component";
+import {BlogComponent} from "../blog/blog.component";
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [HeaderComponent, HeroPartComponent, CategoryComponent, BestSellesComponent, BlogComponent, FooterComponent, ModalComponent],
+  imports: [HeaderComponent, HeroPartComponent, CategoryComponent, BestSellesComponent, LandingBlogComponent, FooterComponent, ModalComponent, BlogComponent],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'
 })
