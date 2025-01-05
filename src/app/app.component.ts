@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {ActivatedRoute, Router, RouterOutlet} from '@angular/router';
 import { HeaderComponent } from "./layout/header/header.component";
 import { FooterComponent } from "./layout/footer/footer.component";
 import { HeroPartComponent } from "./pages/~Landing/hero-part/hero-part.component";
@@ -14,17 +14,24 @@ import { PaymentComponent } from "./pages/payment/payment.component";
 import { ContactUsComponent } from "./pages/contact-us/contact-us.component";
 import { ShoppingCartComponent } from "./pages/shopping-cart/shopping-cart.component";
 import { ChatBotComponent } from "./pages/chat-bot/chat-bot.component";
+import {NgIf} from "@angular/common";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, HeroPartComponent, BestSellesComponent, CategoryComponent, LandingBlogComponent, LandingPageComponent, ProductPageComponent, LoginComponent, VerificationCodeComponent, PaymentComponent, ContactUsComponent, ShoppingCartComponent, ChatBotComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, HeroPartComponent, BestSellesComponent, CategoryComponent, LandingBlogComponent, LandingPageComponent, ProductPageComponent, LoginComponent, VerificationCodeComponent, PaymentComponent, ContactUsComponent, ShoppingCartComponent, ChatBotComponent, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'caffeeNiaz';
+  showChatBot: boolean = true;
 
+  constructor(private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.data.subscribe((data) => {
+      this.showChatBot = data['showChatBot'] ?? true;
+    });
+  }
 
 }

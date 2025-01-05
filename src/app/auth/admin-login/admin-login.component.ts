@@ -4,57 +4,55 @@ import {FormsModule, NgForm} from "@angular/forms";
 import {NgIf} from "@angular/common";
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-admin-login',
   standalone: true,
   imports: [
-    FormsModule,
     NgIf,
+    FormsModule
   ],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  templateUrl: './admin-login.component.html',
+  styleUrl: './admin-login.component.css'
 })
-export class LoginComponent {
-
+export class AdminLoginComponent {
   isLoading = false;
   errorMessage: string | null = null;
   toastMessage = '';
 
-  constructor(private api:ApisServiceService) {}
+  constructor(private api: ApisServiceService) {}
 
-  login(form: NgForm) {
-    if (form.invalid) return; // اگر فرم نامعتبر باشد، کاری انجام نده
+  adminLogin(form: NgForm) {
+    if (form.invalid) return;
 
-    const { phone, password } = form.value;
     this.isLoading = true;
-    this.errorMessage = null; // پاک کردن پیغام خطا
+    this.errorMessage = null;
 
-    this.api.signin(phone, password).subscribe({
+    const { fullname, password } = form.value;
+
+    this.api.adminLogin(fullname, password).subscribe({
       next: (response) => {
-        console.log('Login successful', response);
-        this.isLoading = false; // متوقف کردن بارگذاری
+        console.log('Admin login successful', response);
+        this.isLoading = false;
         this.toastMessage = 'ورود موفقیت‌آمیز بود';
         this.showToast('success-toast', this.toastMessage);
       },
       error: (err) => {
-        this.isLoading = false; // متوقف کردن بارگذاری
+        this.isLoading = false;
         this.toastMessage = err.error.message || 'خطایی رخ داده است.';
         this.showToast('error-toast', this.toastMessage);
       }
     });
   }
 
-  // نمایش Toast
   showToast(id: string, message: string): void {
     const toast = document.getElementById(id);
     if (toast) {
       const messageElement = toast.querySelector('#error-message');
       if (messageElement) messageElement.textContent = message;
-      toast.classList.remove('hidden'); // نمایش Toast
-      setTimeout(() => this.hideToast(id), 5000); // پنهان کردن خودکار بعد از 5 ثانیه
+      toast.classList.remove('hidden');
+      setTimeout(() => this.hideToast(id), 5000);
     }
   }
 
-  // پنهان کردن Toast
   hideToast(id: string): void {
     const toast = document.getElementById(id);
     if (toast) toast.classList.add('hidden');

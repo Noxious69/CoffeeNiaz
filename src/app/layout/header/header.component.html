@@ -29,19 +29,16 @@
             <!-- the new navbar links for menu -->
             <ul class="items-center justify-between pt-4 text-base text-gray-700 md:pt-0 md:hidden">
                 <li class="mx-1 px-1 py-2">
-                  <a routerLink="/contact" routerLinkActive="router-link-active" class="font-medium no-underline hover:underline hover:text-black inline-block px-4 py-2">تماس با ما</a>
+                  <a routerLink="/contact" routerLinkActive="router-link-active" class="font-medium no-underline hover:underline hover:text-black inline-block px-4 py-2">درباره ما</a>
                 </li>
                 <li class="mx-1 px-1 py-2">
-                  <a href="#" class="font-medium no-underline hover:underline hover:text-black inline-block px-4 py-2">درباره ما</a>
-                </li>
-                <li class="mx-1 px-1 py-2">
-                  <a href="#" class="font-medium no-underline hover:underline hover:text-black inline-block px-4 py-2">خدمات</a>
+                  <a routerLink="/blog" routerLinkActive="router-link-active" class="font-medium no-underline hover:underline hover:text-black inline-block px-4 py-2">مقالات</a>
                 </li>
 
                 <!-- Dropdown for لیست محصولات -->
                 <li class="relative mx-1 px-1 py-2 bg-white group">
                   <a class="font-medium no-underline hover:underline hover:text-black inline-block px-4 py-2">
-                    لیست محصولات
+                    محصولات
                     <i class="bi bi-caret-down-fill"></i>
                   </a>
                   <!-- Dropdown Menu -->
@@ -49,12 +46,13 @@
                     <li class="whitespace-no-wrap text-sm text-gray-600 hover:text-gray-800 hover:bg-gray-100">
                       <a href="#" class="px-4 py-2 block">1</a>
                     </li>
-                    <li class="whitespace-no-wrap text-sm text-gray-600 hover:text-gray-800 hover:bg-gray-100">
-                      <a href="#" class="px-4 py-2 block">2</a>
+                    <li
+                      *ngFor="let product of navbarProductsList"
+                      class="whitespace-no-wrap text-sm text-gray-600 hover:text-gray-800 hover:bg-gray-100"
+                    >
+                      <a href="#" class="px-4 py-2 block">{{ product.name }}</a>
                     </li>
-                    <li class="whitespace-no-wrap text-sm text-gray-600 hover:text-gray-800 hover:bg-gray-100">
-                      <a href="#" class="px-4 py-2 block">3</a>
-                    </li>
+
                   </ul>
                 </li>
 
@@ -118,11 +116,14 @@
           style="border: 2px solid #9e624c"
         >
           <button
+            [routerLink]="['/login']"
+            routerLinkActive
             class="px-4 py-2 text-gray-800 bg-transparent rounded-l-full hover:bg-gray-100 focus:outline-none"
           >
             ورود
           </button>
           <button
+            [routerLink]="['/signup']"
             class="px-4 py-2 text-gray-800 bg-transparent rounded-r-full hover:bg-gray-100 focus:outline-none"
           >
             ثبت نام
@@ -130,8 +131,8 @@
         </div>
 
         <a
+          routerLink="/cart"
           class="bg-[#9E624C] text-white p-3 rounded-full inline-block no-underline hover:text-black w-12 h-12 flex items-center justify-center"
-          href="#"
         >
           <i class="bi bi-basket"></i>
         </a>
@@ -139,36 +140,31 @@
         <!-- use the modal on this tag -->
         <a
           (click)="openModal()"
-          class="text-[#9E624C] border mx-3 p-3 rounded-full inline-block no-underline hover:text-black w-12 h-12 flex items-center justify-center"
+          class="cursor-pointer text-[#9E624C] border mx-3 p-3 rounded-full inline-block no-underline hover:text-black w-12 h-12 flex items-center justify-center"
         >
           <i class="bi bi-search"></i>
         </a>
-
       </div>
-
     </div>
   </nav>
 
   <!-- navbar -->
 
-  <div class="flex items-center justify-center hidden md:flex">
+  <div dir="ltr" class="flex items-center justify-center hidden md:flex">
     <!-- Navbar Container -->
     <nav class="bg-[#28221E] rounded-full px-6 py-3 shadow-md md:w-[50vw]">
       <!-- Navbar Links -->
       <ul class="flex justify-center space-x-10">
         <li class="mx-1 px-1 py-2">
-          <a routerLink="/contact" class="font-medium text-white no-underline hover:bg-gray">تماس با ما</a>
+          <a routerLink="/contact" class="font-medium text-white no-underline hover:bg-gray">درباره ما</a>
         </li>
         <li class="mx-1 px-1 py-2">
-          <a href="#" class="font-medium text-white no-underline hover:bg-gray">درباره ما</a>
-        </li>
-        <li class="mx-1 px-1 py-2">
-          <a href="#" class="font-medium text-white no-underline hover:bg-gray">خدمات</a>
+          <a routerLink="/blog" routerLinkActive="router-link-active" class="font-medium text-white no-underline hover:bg-gray">مقالات</a>
         </li>
 
         <li class="items-center justify-center relative mx-1 px-1 py-2 group hover:bg-gray rounded-full md:mb-0" id="button_admin">
             <a class="font-medium text-white no-underline hover:bg-gray">
-                <span class="firstlevel mx-2">لیست محصولات</span>
+                <span class="firstlevel mx-2">محصولات</span>
                 <i class="bi bi-caret-down-fill"></i>
             </a>
             <ul class="absolute left-0 top-0 mt-10 p-2 w-[10vw] border-2 !bg-white rounded-lg shadow-lg bg-white z-10 hidden group-hover:block">
@@ -178,16 +174,12 @@
                         <span class="">1</span>
                     </a>
                 </li>
-                <li class="p-1 whitespace-no-wrap rounded-full text-sm md:text-base text-gray-600 hover:text-gray-800 hover:bg-gray-100">
-                    <a class="px-2 py-1" href="http://www.italiansubs.local:8081/forum/index.php?action=admin;area=packages">
-                        <span class="">2 </span>
-                    </a>
-                </li>
-                <li class="p-1 whitespace-no-wrap rounded-full text-sm md:text-base text-gray-600 hover:text-gray-800 hover:bg-gray-100">
-                    <a class="px-2 py-1" href="http://www.italiansubs.local:8081/forum/index.php?action=admin;area=permissions">
-                        <span class="">3</span>
-                    </a>
-                </li>
+              <li
+                *ngFor="let product of navbarProductsList"
+                class="whitespace-no-wrap text-sm text-gray-600 hover:text-gray-800 hover:bg-gray-100"
+              >
+                <a href="#" class="px-4 py-2 block">{{ product.name }}</a>
+              </li>
             </ul>
         </li>
 

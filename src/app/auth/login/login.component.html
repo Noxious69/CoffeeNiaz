@@ -2,7 +2,7 @@
 <div class="bg-image">
   <!-- Flex container for centering items -->
   <div class="flex h-screen flex-col items-center justify-center ">
-      
+
   <div class="bg-[#F2E5DA] rounded-full inline-block no-underline w-20 h-20 flex items-center justify-center mb-10 p-2">
     <svg
     width="51"
@@ -25,19 +25,56 @@
               <p class="text-gray-500">برای ورود یا ثبت نام شماره تماس خود را وارد کنید!</p>
           </div>
           <!-- Login form -->
-          <form class="w-full">
-              <div class="mb-10 space-y-3">
-                  <div class="space-y-1">
-                      <div class="space-y-2">
-                          <!-- Email label and input field -->
-                          <label class="text-sm font-medium leading-none" for="email">شماره تلفن</label>
-                          <input class="border bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm focus-visible:outline-none" id="email" placeholder="۰۹۰۲۳۹۳٦۳۰۳" name="email" />
-                      </div>
-                  </div>
-                  <!-- Login button -->
-                  <button class="ring-offset-background focus-visible:ring-ring flex h-10 w-full items-center justify-center whitespace-nowrap rounded-md bg-[#9E624C] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#9E624C] focus-visible:outline-none" type="submit">ورود / ثبت نام</button>
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" class="w-full relative">
+          <div class="mb-10 space-y-3">
+            <div class="space-y-5">
+              <div class="space-y-2">
+                <label class="text-sm font-medium leading-none" for="phone">نام کاربری</label>
+                <input
+                  class="border bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm focus-visible:outline-none"
+                  type="text"
+                  id="phone"
+                  placeholder="مثال ۰۹۰۲۳۹۳٦۳۰۳"
+                  name="phone"
+                  ngModel
+                  required
+                />
               </div>
-          </form>
+              <div class="space-y-2">
+                <label class="text-sm font-medium leading-none" for="password">کلمه عبور</label>
+                <input
+                  class="border bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm focus-visible:outline-none"
+                  type="password"
+                  id="password"
+                  placeholder="* * * * * * * *"
+                  name="password"
+                  ngModel
+                  required
+                />
+              </div>
+            </div>
+            <button
+              class="ring-offset-background focus-visible:ring-ring flex h-10 w-full items-center justify-center whitespace-nowrap rounded-md bg-[#9E624C] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#9E624C] focus-visible:outline-none"
+              type="submit"
+              [disabled]="isLoading"
+            >
+              <span *ngIf="!isLoading">ورود / ثبت نام</span>
+              <span *ngIf="isLoading">در حال بارگذاری...</span>
+            </button>
+          </div>
+
+          <!-- Toast Notification-->
+          <div
+            id="error-toast"
+            class="border hidden p-4 mb-4 w-full max-w-xs text-gray-500 bg-white rounded-lg shadow-lg mt-3"
+            role="alert"
+          >
+            <div class="ml-3 text-sm font-normal" id="error-message">پیغام خطا</div>
+          </div>
+
+        </form>
+
+
       </div>
   </div>
 </div>

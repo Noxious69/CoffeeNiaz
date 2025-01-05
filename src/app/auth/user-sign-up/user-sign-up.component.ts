@@ -4,57 +4,61 @@ import {FormsModule, NgForm} from "@angular/forms";
 import {NgIf} from "@angular/common";
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-user-sign-up',
   standalone: true,
   imports: [
     FormsModule,
-    NgIf,
+    NgIf
   ],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  templateUrl: './user-sign-up.component.html',
+  styleUrl: './user-sign-up.component.css'
 })
-export class LoginComponent {
-
+export class UserSignUpComponent {
   isLoading = false;
   errorMessage: string | null = null;
   toastMessage = '';
 
-  constructor(private api:ApisServiceService) {}
+  constructor(private api: ApisServiceService) {}
 
-  login(form: NgForm) {
-    if (form.invalid) return; // اگر فرم نامعتبر باشد، کاری انجام نده
+  signup(form: NgForm) {
+    if (form.invalid) return;
 
-    const { phone, password } = form.value;
     this.isLoading = true;
-    this.errorMessage = null; // پاک کردن پیغام خطا
+    this.errorMessage = null;
 
-    this.api.signin(phone, password).subscribe({
+    const userData = {
+      username: form.value.username,
+      fullname: form.value.fullname,
+      password: form.value.password,
+      phoneNumber: form.value.phoneNumber,
+      email: form.value.email
+    };
+
+    this.api.signup(userData).subscribe({
       next: (response) => {
-        console.log('Login successful', response);
-        this.isLoading = false; // متوقف کردن بارگذاری
-        this.toastMessage = 'ورود موفقیت‌آمیز بود';
+        console.log('Signup successful', response);
+        this.isLoading = false;
+        this.toastMessage = 'ثبت نام با موفقیت انجام شد';
         this.showToast('success-toast', this.toastMessage);
       },
       error: (err) => {
-        this.isLoading = false; // متوقف کردن بارگذاری
+        this.isLoading = false;
         this.toastMessage = err.error.message || 'خطایی رخ داده است.';
         this.showToast('error-toast', this.toastMessage);
       }
     });
   }
 
-  // نمایش Toast
   showToast(id: string, message: string): void {
     const toast = document.getElementById(id);
     if (toast) {
       const messageElement = toast.querySelector('#error-message');
       if (messageElement) messageElement.textContent = message;
-      toast.classList.remove('hidden'); // نمایش Toast
-      setTimeout(() => this.hideToast(id), 5000); // پنهان کردن خودکار بعد از 5 ثانیه
+      toast.classList.remove('hidden');
+      setTimeout(() => this.hideToast(id), 5000);
     }
   }
 
-  // پنهان کردن Toast
   hideToast(id: string): void {
     const toast = document.getElementById(id);
     if (toast) toast.classList.add('hidden');

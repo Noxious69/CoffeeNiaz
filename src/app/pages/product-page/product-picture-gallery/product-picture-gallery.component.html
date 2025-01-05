@@ -1,5 +1,5 @@
-<div class="flex flex-col md:flex-row-reverse justify-between mt-10 gap-6 p-4">
-  
+<div class="flex flex-col md:flex-row-reverse justify-between mt-10 gap-6 p-4" dir="ltr">
+
      <!-- Product Image Section -->
     <div class="md:w-1/5 relative border flex justify-center items-center p-4 rounded-lg">
       <!-- Discount Badge -->
@@ -23,7 +23,7 @@
     <!-- Product Title -->
     <h1 class="text-2xl font-bold mb-2">Boxilian دانه قهوه...</h1>
     <p class="text-gray-500">Boxilian : دانه قهوه برند</p>
-    
+
     <!-- Product Features -->
     <div class="mt-4">
       <ul class="list-none space-y-2">
@@ -44,7 +44,7 @@
         </li>
       </ul>
     </div>
-    
+
     <!-- Dropdown for Product Quantity -->
     <div class="mt-6 w-1/2">
       <label for="quantity" class="block text-gray-700 mb-1">یک گزینه را انتخاب کنید:</label>
@@ -52,7 +52,7 @@
         <option class="px-2" value="1kg">1 کیلوگرم</option>
       </select>
     </div>
-    
+
     <div class="flex w-full items-center justify-between bg-[#FDF4EF] p-4 rounded-lg mt-6 shadow-lg ml-auto">
 
       <!-- Price Section -->
@@ -60,33 +60,39 @@
         <span class="text-[#9E624C] text-2xl font-bold ">۲۴۰,۰۰۰</span>
         <span class="text-sm text-[#9E624C]">تومان</span>
       </div>
-    
+
       <!-- Quantity Selector -->
       <div class="flex items-start ml-auto space-x-3">
         <!-- Decrease Button -->
-        <button class="bg-[#F2E5DA] text-[#9E624C] rounded-full w-8 h-8 flex items-center justify-center">
+        <button
+          class="bg-[#F2E5DA] text-[#9E624C] rounded-full w-8 h-8 flex items-center justify-center"
+          (click)="decreaseQuantity()"
+        >
           <i class="bi bi-dash"></i>
         </button>
-    
+
         <!-- Quantity Number -->
-        <span class="text-xl text-center font-bold">1</span>
-    
+        <span class="text-xl text-center font-bold">{{ quantity }}</span>
+
         <!-- Increase Button -->
-        <button class="bg-[#F2E5DA] text-[#9E624C] rounded-full w-8 h-8 flex items-center justify-center">
+        <button
+          class="bg-[#F2E5DA] text-[#9E624C] rounded-full w-8 h-8 flex items-center justify-center"
+          (click)="increaseQuantity()"
+        >
           <i class="bi bi-plus"></i>
         </button>
       </div>
-    
+
       <!-- Add to Cart Button -->
-      <button class="bg-[#9E624C] text-white px-6 py-3 rounded-lg hover:bg-[#7c4f3a]">
+      <button (click)="addToCart()" class="bg-[#9E624C] text-white px-6 py-3 rounded-lg hover:bg-[#7c4f3a]">
         افزودن به سبد خرید
       </button>
-    
+
     </div>
-    
+
 
   </div>
-  
+
   <!-- Second part (Left side) -->
   <div class="flex flex-col items-start space-y-4 md:w-1/6">
     <!-- Shipping Section -->
@@ -96,7 +102,7 @@
         <p class="text-sm text-gray-500">حدود ۲ الی ۶ روز کاری</p>
       </div>
     </div>
-    
+
     <!-- Warranty Section -->
     <div class="bg-[#F7F7F7] border-2 w-full bg-white p-4 rounded-lg shadow flex justify-center items-center">
       <div class="text-right">
@@ -104,7 +110,7 @@
         <p class="text-sm text-gray-500">تا ۷ روز ضمانت عودت کالا</p>
       </div>
     </div>
-    
+
     <!-- Support Section -->
     <div class="bg-[#F7F7F7] border-2 w-full bg-white p-4 rounded-lg shadow flex justify-center items-center">
       <div class="text-right">
@@ -112,7 +118,7 @@
         <p class="text-sm text-gray-500">پشتیبانی ۲۴ ساعته از تلگرام</p>
       </div>
     </div>
-    
+
     <!-- Payment Section -->
     <div class="bg-[#F7F7F7] border-2 w-full bg-white p-4 rounded-lg shadow flex justify-center items-center">
       <div class="text-right">
@@ -120,7 +126,7 @@
         <p class="text-sm text-gray-500">پرداخت امن از درگاه مطمئن</p>
       </div>
     </div>
-    
+
     <!-- Contact Section -->
     <div class="w-full bg-white border p-4 rounded-lg shadow flex justify-center items-center">
       <div class="text-right">

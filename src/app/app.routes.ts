@@ -10,14 +10,20 @@ import {BlogComponent} from "./pages/blog/blog.component";
 // import * as path from "node:path";
 import {BlogListComponent} from "./pages/blog/blog-list/blog-list.component";
 import {BlogDetailComponent} from "./pages/blog/blog-detail/blog-detail.component";
+import {UserSignUpComponent} from "./auth/user-sign-up/user-sign-up.component";
+import {AdminLoginComponent} from "./auth/admin-login/admin-login.component";
 
 export const routes: Routes = [
-    {path: 'home', component:LandingPageComponent},
+    {path: 'home', component:LandingPageComponent , data: { showChatBot: true }},
     {path: '', redirectTo:'home' , pathMatch:'full'},
 
 
-    {path:'login', component:LoginComponent},
+    {path:'login', component:LoginComponent , data: { showChatBot: false }},
+    {path:'signup', component:UserSignUpComponent , data: { showChatBot: false }},
+    {path:'boss', component:AdminLoginComponent , data: { showChatBot: false }},
     {path:'verify', component:VerificationCodeComponent},
+
+
     {path:'product', component:ProductPageComponent},
     {path:'contact', component:ContactUsComponent},
     {path:'payment', component:PaymentComponent},

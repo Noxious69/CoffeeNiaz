@@ -1,0 +1,21 @@
+* , body, html{
+  font-family: persian !important;
+}
+
+.bg-image {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1106%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(255%2c 248%2c 245%2c 1)'%3e%3c/rect%3e%3cpath d='M1488 560L0 560 L0 405.77Q64.42 350.19%2c 120 414.6Q174.58 397.18%2c 192 451.76Q219.19 406.95%2c 264 434.15Q341.06 391.21%2c 384 468.28Q407.87 372.15%2c 504 396.02Q575.13 347.15%2c 624 418.29Q669.52 391.81%2c 696 437.34Q742.32 411.66%2c 768 457.98Q784.05 402.03%2c 840 418.09Q885.05 391.14%2c 912 436.19Q956.75 360.94%2c 1032 405.7Q1061.86 363.56%2c 1104 393.42Q1165.11 382.53%2c 1176 443.64Q1228.26 375.9%2c 1296 428.17Q1338.77 350.94%2c 1416 393.71Q1458.56 364.26%2c 1488 406.82z' fill='rgba(158%2c 98%2c 76%2c 0.2)'%3e%3c/path%3e%3cpath d='M1512 560L0 560 L0 487.33Q74.63 441.96%2c 120 516.58Q148.09 472.67%2c 192 500.76Q242.97 431.73%2c 312 482.69Q391.38 442.07%2c 432 521.45Q462.93 480.38%2c 504 511.31Q510.34 445.65%2c 576 451.99Q617.73 421.72%2c 648 463.44Q709.74 453.18%2c 720 514.92Q725.02 447.94%2c 792 452.96Q856.25 445.21%2c 864 509.46Q886.33 459.79%2c 936 482.12Q963.75 437.87%2c 1008 465.61Q1067.72 453.33%2c 1080 513.05Q1100.91 461.96%2c 1152 482.87Q1182.53 441.39%2c 1224 471.92Q1250.39 426.31%2c 1296 452.7Q1353.67 438.37%2c 1368 496.04Q1410 466.05%2c 1440 508.05Q1451.48 447.53%2c 1512 459.01z' fill='rgba(158%2c 98%2c 76%2c 0.2)'%3e%3c/path%3e%3cpath d='M1512 560L0 560 L0 535.03Q52.57 467.6%2c 120 520.17Q178.04 506.21%2c 192 564.25Q240.39 492.64%2c 312 541.04Q366.98 524.02%2c 384 579Q414.6 489.6%2c 504 520.19Q575.92 472.11%2c 624 544.03Q642.56 490.59%2c 696 509.14Q764.02 457.16%2c 816 525.19Q877.74 514.93%2c 888 576.68Q889.72 506.4%2c 960 508.12Q1025.81 453.93%2c 1080 519.75Q1150.16 469.91%2c 1200 540.07Q1265.51 485.59%2c 1320 551.1Q1394.22 505.32%2c 1440 579.53Q1452.93 520.46%2c 1512 533.4z' fill='rgba(255%2c 255%2c 255%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1106'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+  background-size: cover; /* Ensure the image covers the entire screen */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent repeating */
+  height: 100vh; /* Set the height to full view height */
+  width: 100vw;  /* Set the width to full view width */
+
+}
+
+/* Optional: To handle smaller screen sizes */
+@media (max-width: 768px) {
+  .bg-image {
+    background-size: contain; /* Adjust for smaller devices */
+    background-position: center top;
+  }
+}

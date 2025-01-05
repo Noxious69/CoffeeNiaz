@@ -1,31 +1,19 @@
 <app-header></app-header>
 
 <div class="mt-10 mb-20 mx-20 flex flex-col lg:flex-row gap-6 p-4">
-    <!-- Left Side: Summary Box -->
-    <div class="bg-[#FFF8F5] w-1/2 lg:w-1/3 p-4 rounded-lg shadow flex flex-col justify-between h-full">
-      <div dir="rtl" class="flex flex-col gap-2">
-        <h2 class="text-lg font-semibold">مجموع کالا (3)</h2>
-        <p class="text-gray-500">مجموع کل سبد خرید</p>
-        <p class="text-lg font-bold">۶۴۰,۰۰۰ تومان</p>
-      </div>
-  
-      <button class="bg-[#9E624C] text-white py-2 px-4 rounded mt-5">
-        تایید و تکمیل سفارش
-      </button>
-    </div>
-  
+
     <!-- Right Side: Product Table -->
     <div class="bg-[#FFF8F5] border w-full lg:w-2/3">
       <div class="overflow-x-auto">
         <div class="p-12 border border-bottom">
           <p dir="rtl" class="flex justify-center pb-8">
-            ۳۶۰,۰۰۰ تومان به سبد خرید خود اضافه و ارسال رایگان دریافت کنید!
+            {{ 360000 - totalPrice | currency:'IRR':'symbol' }} تومان به سبد خرید خود اضافه و ارسال رایگان دریافت کنید!
           </p>
           <div class="w-full bg-white rounded-full h-2.5 dark:bg-gray-200">
-            <div class="bg-[#9E624C] h-2.5 rounded-full" style="width: 45%"></div>
+            <div class="bg-[#9E624C] h-2.5 rounded-full" [style.width.%]="(totalPrice / 360000) * 100" style="width: 45%"></div>
           </div>
         </div>
-  
+
         <table class="min-w-full border-collapse text-right">
           <thead>
             <tr class="bg-[#FFF8F5]">
@@ -37,19 +25,29 @@
           </thead>
           <tbody>
             <!-- First Product Row -->
-            <tr class="border-b">
+            <tr class="border-b" *ngFor="let order of orders">
               <td class="p-3 flex items-center gap-4">
-                <div class="text-sm">دانه قهوه باکسی برند Boxilian</div>
+                <div class="text-sm">{{ order.productName }}</div>
               </td>
-              <td class="p-3">۲۴۰,۰۰۰ تومان</td>
+              <td class="p-3">{{ order.unitPrice | currency:'IRR':'symbol' }}</td>
               <td class="p-3 flex items-center">
-                <button class="p-1 bg-gray-200 rounded-full">-</button>
-                <span class="mx-2">1</span>
-                <button class="p-1 bg-gray-200 rounded-full">+</button>
+                <button
+                  class="p-1 bg-gray-200 rounded-full"
+                  (click)="decreaseQuantity(order)"
+                >
+                  -
+                </button>
+                <span class="mx-2">{{ order.quantity }}</span>
+                <button
+                  class="p-1 bg-gray-200 rounded-full"
+                  (click)="increaseQuantity(order)"
+                >
+                  +
+                </button>
               </td>
-              <td class="p-3">۲۴۰,۰۰۰ تومان</td>
+              <td class="p-3">{{ order.totalPrice | currency:'IRR':'symbol' }}</td>
             </tr>
-  
+
             <!-- Second Product Row -->
             <tr class="border-b">
               <td class="p-3 flex items-center gap-4">
@@ -67,7 +65,21 @@
         </table>
       </div>
     </div>
+
+  <!-- Left Side: Summary Box -->
+  <div class="bg-[#FFF8F5] w-1/2 lg:w-1/3 p-4 rounded-lg shadow flex flex-col justify-between h-full">
+    <div dir="rtl" class="flex flex-col gap-2">
+      <h2 class="text-lg font-semibold"> مجموع کالا ({{ orders.length }})</h2>
+      <p class="text-gray-500">مجموع کل سبد خرید</p>
+      <p class="text-lg font-bold">{{ totalPrice | currency:'IRR':'symbol' }}</p>
+    </div>
+
+    <button [routerLink]="'/payment'" class="bg-[#9E624C] text-white py-2 px-4 rounded mt-5">
+      تایید و تکمیل سفارش
+    </button>
   </div>
-  
+
+</div>
+
 
   <app-footer></app-footer>

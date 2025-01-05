@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component ,ElementRef, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-chat-bot',
@@ -14,6 +15,11 @@ export class ChatBotComponent {
   isChatboxOpen = false; // Initially closed
   userInput: string = '';
   messages: { text: string, isUser: boolean }[] = []; // Chat messages
+  isLoginPage: boolean = false;
+
+  constructor(private router: Router) {
+    this.isLoginPage = this.router.url === '/login';
+  }
 
   @ViewChild('chatbox') chatbox!: ElementRef;
 
